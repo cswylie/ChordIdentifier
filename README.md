@@ -1,3 +1,3 @@
 # ChordIdentifier
 
-this is a website
+Hi welcome to our code for a website that builds chords. There's more to come...
