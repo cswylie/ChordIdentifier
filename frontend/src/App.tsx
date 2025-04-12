@@ -1,13 +1,14 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Text } from "@chakra-ui/react"
+
+import ChordSearchBar from './components/ChordSearchBar';
 
 const App: React.FC = () => {
   return (
     <ChakraProvider>
-      <div>
-        <h1>Chord Identifier</h1>
-        <p>Enter a list of notes to identify the chord.</p>
-      </div>
+      <Text>Chord Identifier</Text>
+      <ChordSearchBar />
     </ChakraProvider>
   );
 };
