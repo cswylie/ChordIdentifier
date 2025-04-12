@@ -10,3 +10,5 @@ const ChordSearchBar: React.FC = () => {
 };
 
 export default ChordSearchBar;
+
+// This is a comment
