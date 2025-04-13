@@ -1,16 +1,6 @@
-import { z } from 'zod';
+import { chordRequestSchema } from "./schemas";
 
-// Zod schema to validate the input
-// The schema parses the object passed to the funciton
-// It only takes arrays full of strings with a minimum of 1 and a maximum of 2
-// The strings must be valid notes (A-G) with optional sharps (#) or flats (b)
-const chordRequestSchema = z.object({
-  notes: z.array(
-    z.string().regex(/^[A-G](#|b)?$/, { // Error message if no match
-      message: "Each note must be a valid note (e.g., C, D#, Bb)"
-    })
-  ).min(1).max(2),
-});
+import { Chord, Interval, Note, Scale } from "tonal";
 
 export const validateChordRequest = async (notes: string[]) => {
   try {
@@ -23,8 +13,8 @@ export const validateChordRequest = async (notes: string[]) => {
   }
 };
 
-// A mock function to identify chords, you can replace this with your real logic
-// Use Tonal Stuff here
+// Use Tonal Detect feature
 const identifyChords = (notes: string[]) => {
-  return ['C Major', 'A Minor']; // Just a placeholder
+  let chord = Chord.detect(notes);
+  return [chord]; // Just a placeholder
 };

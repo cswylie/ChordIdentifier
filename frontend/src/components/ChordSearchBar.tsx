@@ -7,6 +7,7 @@ const ChordSearchBar: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // ***** Getting a Bad Request Error on This
   const fetchChords = async () => {
     setLoading(true);
     setError('');
