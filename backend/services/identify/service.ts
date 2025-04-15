@@ -15,6 +15,13 @@ export const validateChordRequest = async (notes: string[]) => {
 
 // Use Tonal Detect feature
 const identifyChords = (notes: string[]) => {
-  let chords = Chord.detect(notes);
-  return chords;
+    if (notes.length === 2) {
+    const [note1, note2] = notes;
+    const interval = Interval.distance(note1, note2);
+    return [interval];
+  } else if (notes.length >= 3) {
+    const chords = Chord.detect(notes);
+    return chords;
+  }
+  return { message: "Please enter at least two notes" };
 };
