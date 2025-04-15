@@ -38,7 +38,7 @@ const ChordSearchBar: React.FC = () => {
   return (
     <Box background="blue.400" width="100%" padding="4" color="white">
       <Input
-        placeholder="Enter notes separated by space (e.g. C A)"
+        placeholder="Enter notes separated by space (e.g. C E G)"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyPress}
