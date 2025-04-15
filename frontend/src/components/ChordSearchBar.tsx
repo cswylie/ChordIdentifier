@@ -15,12 +15,12 @@ const ChordSearchBar: React.FC = () => {
       const response = await fetch('http://localhost:3000/identify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ notes: inputValue.split(' ') }),
+        body: JSON.stringify(inputValue.split(' ')),
       });
       
       // What you get back from the backend
       const data = await response.json();
-      setChords(data.chords || []);
+      setChords(data || []);
     } catch (err) {
       setError('Failed to fetch chords');
     } finally {

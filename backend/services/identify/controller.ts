@@ -11,7 +11,6 @@ export const identifyController = async (req: Request, res: Response) => {
     // Service does the Zod validation
     const result = await validateChordRequest(input);
     const parsedResult = chordResponseSchema.parse(result);
-
     res.status(200).json(parsedResult);
   } catch (error: any) {
     res.status(400).json({
